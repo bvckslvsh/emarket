@@ -9,3 +9,7 @@ spring:
     password:
   flyway:
     baseline-on-migrate: true
+  mvc:
+    view:
+      prefix:  classpath:/templates/
+      suffix: .html
