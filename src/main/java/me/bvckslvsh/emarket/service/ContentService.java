@@ -9,12 +9,12 @@ import java.util.List;
 public interface ContentService {
 
     void save(Content content);
-    void edit(Long id, Content newContent);
-    void delete(Long id);
-    Content findById(Long id);
+    void edit(long id, Content newContent);
+    void delete(long id);
+    Content findById(long id);
 
     List<Content> findAllByOrderId();
-    List<Content> findAllByCategoryId(Long categoryId);
+    List<Content> findAllByCategoryId(long categoryId);
 
-    Long count();
+    long count();
 }

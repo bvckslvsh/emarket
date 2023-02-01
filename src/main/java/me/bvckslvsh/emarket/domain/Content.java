@@ -22,9 +22,13 @@ public class Content {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = NAMESEQ)
     @SequenceGenerator(name = NAMESEQ, sequenceName = NAMESEQ, allocationSize = 1)
-    private long id;
+    private Long id;
     private String title;
     private BigDecimal price;
+    private String imageurl;
+    private String description;
+
+    private long categoryId;
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "content_categories",
             joinColumns = @JoinColumn(name = "content_id"),

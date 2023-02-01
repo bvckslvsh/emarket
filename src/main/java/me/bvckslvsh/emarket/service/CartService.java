@@ -13,9 +13,8 @@ public interface CartService {
     void addContent(Content content);
     void removeContent(Content content);
     void clearCart();
-    void checkout();
     Map<Content, Integer> contentInCart();
-
+    void checkout();
     BigDecimal totalPrice();
 
 }
