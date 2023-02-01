@@ -6,10 +6,12 @@ spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/emarket
     username: postgres
-    password:
+    password: qwerty
   flyway:
     baseline-on-migrate: true
   mvc:
     view:
       prefix:  classpath:/templates/
       suffix: .html
+  application:
+    name: emarket
