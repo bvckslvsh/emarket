@@ -48,10 +48,6 @@ public class ContentServiceImplementation implements ContentService {
         return contentRepository.findAllByOrderById();
     }
 
-    @Override
-    public List<Content> findAllByCategoryId(long categoryId) {
-        return contentRepository.findAllByCategoryId(categoryId);
-    }
 
     @Override
     public long count() {

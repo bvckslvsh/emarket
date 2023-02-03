@@ -14,7 +14,6 @@ public interface ContentService {
     Content findById(long id);
 
     List<Content> findAllByOrderId();
-    List<Content> findAllByCategoryId(long categoryId);
 
     long count();
 }

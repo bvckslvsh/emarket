@@ -17,22 +17,22 @@ import java.util.List;
 @Table(name = "contents")
 public class Content {
 
-    private static final String NAMESEQ = "contentseq";
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = NAMESEQ)
-    @SequenceGenerator(name = NAMESEQ, sequenceName = NAMESEQ, allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String title;
     private BigDecimal price;
     private String imageurl;
     private String description;
 
-    private long categoryId;
-    @ManyToMany(cascade = CascadeType.ALL)
-    @JoinTable(name = "content_categories",
-            joinColumns = @JoinColumn(name = "content_id"),
-            inverseJoinColumns = @JoinColumn(name = "category_id"))
-    private List<Category> categories;
+
+
+    public Content(String title, BigDecimal price, String imageurl, String description) {
+        this.title = title;
+        this.price = price;
+        this.imageurl = imageurl;
+        this.description = description;
+    }
 }
 

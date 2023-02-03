@@ -21,19 +21,20 @@
 </div>
 
 <div class="container mt-5">
-    <div th:each="el : ${content}" class="alert alert-info mt-2">
-        <h1 th:text="${el.title}"/>
+    <h1>Content catalog</h1>
+    <div th:each="el : ${contents}" class="alert alert-info mt-2">
+        <h3 th:text="${el.title}"/>
         <p th:text="${el.price}"/>
         <p th:text="${el.description}"/>
-        <a th:href="'/content/' + ${el.id} + '/edit'" class="btn btn-warning">Edit</a>
-        <a th:href="'/content/' + ${el.id} + '/delete'" class="btn btn-warning">Delete</a>
+        <a th:href="'/content/' + ${el.id}" class="btn btn-warning">Details</a>
     </div>
 </div>
 
 <footer class="text-muted py-5">
     <div class="container">
         <p class="float-end mb-1">
-            <a href="#">Back to top</a>
+            <a href="#">Back to top</a><br>
+            <a class="me-3 py-2 text-dark text-decoration-none" href="/content/new">Add new content [admin tool]</a><br>
         </p>
         <p class="mb-1">eMarket test project.</p>
     </div>
