@@ -15,8 +15,3 @@ spring:
       suffix: .html
   application:
     name: emarket
-  security:
-    user:
-      name: mradmin
-      password: qwerty
-      roles: admin
