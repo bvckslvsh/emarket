@@ -17,15 +17,11 @@ import java.util.List;
 @Table(name = "carts")
 public class Cart {
 
-    private static final String NAMESEQ = "cartseq";
-
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = NAMESEQ)
-    @SequenceGenerator(name = NAMESEQ, sequenceName = NAMESEQ, allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    @OneToOne
-    @JoinColumn(name = "user_id")
-    private User user;
+
+    private long owner_id;
     @ManyToMany
     @JoinTable(name = "carts_content",
     joinColumns = @JoinColumn(name = "cart_id"),

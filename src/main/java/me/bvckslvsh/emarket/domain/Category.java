@@ -17,11 +17,10 @@ import java.util.List;
 @Table(name = "categories")
 public class Category {
 
-    private static final String NAMESEQ = "categoryseq";
+
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = NAMESEQ)
-    @SequenceGenerator(name = NAMESEQ, sequenceName = NAMESEQ, allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String title;
 }

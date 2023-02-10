@@ -14,16 +14,14 @@ import lombok.NoArgsConstructor;
 @Table(name = "users")
 public class User {
 
-    private static final String NAMESEQ = "userseq";
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = NAMESEQ)
-    @SequenceGenerator(name = NAMESEQ, sequenceName = NAMESEQ, allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String name;
     private String password;
     private String email;
-    private boolean archive;
+    private boolean active;
     @Enumerated(EnumType.STRING)
     private Role role;
     @OneToOne(cascade = CascadeType.REMOVE)

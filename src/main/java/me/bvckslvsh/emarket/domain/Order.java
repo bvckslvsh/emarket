@@ -20,23 +20,19 @@ import java.util.List;
 @Table(name = "orders")
 public class Order {
 
-    private static final String NAMESEQ = "orderseq";
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = NAMESEQ)
-    @SequenceGenerator(name = NAMESEQ, sequenceName = NAMESEQ, allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     @CreationTimestamp
     private LocalDateTime creationTime;
     @UpdateTimestamp
     private LocalDateTime updationTime;
-    @ManyToOne
-    @JoinColumn(name = "user_id")
-    private User user;
+    private long owner_id;
     private BigDecimal sum;
     private String address;
-    @OneToMany(cascade = CascadeType.ALL)
-    private List<OrderDetails> details;
+    private String details;
+    private String Content_Ids;
     @Enumerated(EnumType.STRING)
     private OrderStatus status;
 
