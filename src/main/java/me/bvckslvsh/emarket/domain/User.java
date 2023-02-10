@@ -26,4 +26,11 @@ public class User {
     private Role role;
     @OneToOne(cascade = CascadeType.REMOVE)
     private Cart cart;
+
+    public User(String name, String email, Role role) {
+        this.name = name;
+        this.password = password;
+        this.email = email;
+        this.role = role;
+    }
 }
