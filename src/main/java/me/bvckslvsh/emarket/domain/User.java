@@ -20,8 +20,10 @@ public class User {
     private long id;
     private String name;
     private String password;
+    @Column(unique = true)
     private String email;
-    private boolean active;
+    private long tradesCount;
+
     @Enumerated(EnumType.STRING)
     private Role role;
     @OneToOne(cascade = CascadeType.REMOVE)
@@ -32,5 +34,11 @@ public class User {
         this.password = password;
         this.email = email;
         this.role = role;
+    }
+
+    public User(String name, String password, String email) {
+        this.name = name;
+        this.password = password;
+        this.email = email;
     }
 }

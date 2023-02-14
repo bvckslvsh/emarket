@@ -8,6 +8,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.security.Principal;
 import java.util.ArrayList;
@@ -27,5 +29,22 @@ public class UserController {
         model.addAttribute("user", userArrayList);
         return "user";
     }
+
+
+    @GetMapping("/register")
+    public String registerPage(Model model){
+        return "registerPage";
+    }
+
+    @PostMapping("/register")
+    public String registerUser(@RequestParam String name,
+                               @RequestParam String password,
+                               @RequestParam String email,
+                               Model model) {
+        User user = new User(name, password, email);
+        userRepository.save(user);
+        return ("redirect:/home");
+    }
+
 
 }
